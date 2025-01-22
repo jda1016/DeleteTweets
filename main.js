@@ -1,14 +1,14 @@
-var authorization = "Bearer ***"; // replace by authorization value
+var authorization = "Bearer AAAAAAAAAAAAAAAAAAAAANRILgAAAAAAnNwIzUejRCOuH5E6I8xnZz4puTs%3D1Zv7ttfk8LF81IUq16cHjhLTvJu4FA33AGWWjCpTnA"; // replace by authorization value
 var ua = navigator.userAgentData.brands.map(brand => `"${brand.brand}";v="${brand.version}"`).join(', ');
-var client_tid = "***"; // replace by X-Client-Transaction-Id value
-var client_uuid = "***"; // replace by X-Client-Uuid value
+var client_tid = "x1i67iXURKg911TFATGUbe1L+8JurO5Pg/K5h4ZOYTVu/VvH64OhNlRZx4+RCD4UuzmZhsQeCPu2l26CfobUts45VkMmxA"; // replace by X-Client-Transaction-Id value
+var client_uuid = "2a8bbef2-ac22-4ec7-b7c8-1f2b553b9a63"; // replace by X-Client-Uuid value
 var csrf_token = getCookie("ct0");
 var random_resource = "uYU5M2i12UhDvDTzN6hZPg";
 var random_resource_old_tweets = "H8OOoI-5ZE4NxgRr8lfyWg"
 var language_code = navigator.language.split("-")[0]
 var tweets_to_delete = []
 var user_id = getCookie("twid").substring(4);
-var username = "YourUsernameHere" // replace with your username
+var username = "@1iterally_dead" // replace with your username
 var stop_signal = undefined
 var twitter_archive_content = undefined
 var twitter_archive_loading_confirmed = false
@@ -22,14 +22,14 @@ var delete_options = {
 	 */
 	"from_archive":false,
 	/*  unretweet: seems obvious, but it unretweet if set to true */
-	"unretweet":false,
+	"unretweet":true,
 	/* do_not_remove_pinned_tweet: THIS CAN FAIL. Twitter has too many different way to format their response that I cannot guarantee this to work 100%
 	   It should work for newer tweets. HOWEVER, use the "tweets_to_ignore" below and put in your pinned tweet ID, this will work 100%.
 	   'why do you make this option then', this is a safeguard for people that forgot to add their pinned tweet in the ignore list.
 	*/
-	"do_not_remove_pinned_tweet":true,
+	"do_not_remove_pinned_tweet":false,
 	/* delete_message_with_url_only: self explanatory, but will delete tweets that contain links */
-	"delete_message_with_url_only":false,
+	"delete_message_with_url_only":true,
 	/* delete_specific_ids_only: Array of tweet IDs that the script will delete. The script will not delete anything else than these IDs. Any other option will be ignored.
 	   a tweet id is the number you see on the right of the url: https://x.com/USERNAME/status/1695001000000000
 	   an example of how the array can look like : ["1695001000000000", "1303001000000000"] don't forget the quotes ""
